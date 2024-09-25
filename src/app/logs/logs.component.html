@@ -1,0 +1,15 @@
+<section id="logs">
+    <header>
+        <h2> {{ structure().name }}'s logs </h2>
+    </header>
+    
+    <table>
+        <thead>
+            <tr>
+                @for (field of structure().fields; track field.name) {
+                    <th> {{ field.name }} <span>({{ field.dataType }})</span> </th>
+                }
+            </tr>
+        </thead>
+    </table>
+</section>

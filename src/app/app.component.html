@@ -2,5 +2,11 @@
   <h1> LogKeep </h1>
   <p> A lightweight app that takes care of your logs. </p>
   
-  <app-structures />
+  <app-structures (select)="onSelectStructure($event)"/>
+
+  @if (selectedStructure) {
+    <app-logs [structure]="selectedStructure"/>
+  } @else {
+    <p> Select a structure to see its logs! </p>
+  }
 </main>

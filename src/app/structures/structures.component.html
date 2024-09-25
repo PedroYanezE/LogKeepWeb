@@ -1,19 +1,17 @@
 <section>
     <h2> Collections </h2>
 
-    <span> --- </span>
-
-    @for (structure of structures; track structure.id) {
-        <span> {{ structure.name }} </span>
-    }
-
-    <span> --- </span>
-
     <div>
-        <ul>
-            <li> Ficha Médica Acerey </li>
-            <li> Ficha Médica Bradford Hill </li>
-            <li> Receta </li>
-        </ul>
+        @if(structures) {
+            <ul>
+                @for (structure of structures; track structure.id) {
+                    <li class="structure" (click)="selectStructure(structure.id)">
+                        {{ structure.name }}
+                    </li>
+                }
+            </ul>
+        } @else {
+            <p> Loading... </p>
+        }
     </div>
 </section>
