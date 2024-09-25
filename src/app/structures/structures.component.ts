@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, output } from '@angular/core';
 import { StructuresService } from './structure.service';
 import { StructureDetail, StructureList } from './structures.model';
+import { NewStructureComponent } from './new-structure/new-structure.component';
 
 @Component({
   selector: 'app-structures',
@@ -8,7 +9,7 @@ import { StructureDetail, StructureList } from './structures.model';
   templateUrl: './structures.component.html',
   styleUrl: './structures.component.css',
   imports: [
-    
+    NewStructureComponent    
   ]
 })
 export class StructuresComponent implements OnInit {

@@ -9,7 +9,7 @@ export interface StructureDetail {
     fields: Field[]
 }
 
-interface Field {
+export interface Field {
     name: string;
     dataType: string;
 }

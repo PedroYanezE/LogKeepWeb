@@ -1,0 +1,24 @@
+<form>
+    <p>
+        <label> Collection name </label>
+        <input/>
+    </p>
+
+    @for (field of fields(); track field.name) {
+        <p>
+            <label> {{ field.name }} </label>
+            <input/>
+            <button type="button" (click)="removeField(field.name)"> - </button>
+        </p>
+    }
+
+    @if (isCreatingField) {
+        <p>
+            <label> Name </label>
+            <input type="text" id="newFieldName" name="newFieldName" [(ngModel)]="newFieldName" />
+            <button type="button" (click)="addField()"> add </button>
+        </p>
+    }
+
+    <button type="button" (click)="createField()"> + </button>
+</form>
